@@ -11,7 +11,7 @@ func Index(w http.ResponseWriter, r *http.Request) {
 	data := map[string]any {
 		"categories": categories,
 	}
-	temp, err := template.ParseFiles("views/home/index.html")
+	temp, err := template.ParseFiles("views/category/index.html")
 	if err != nil {
 		panic(err)
 	}
