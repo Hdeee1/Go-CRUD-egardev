@@ -52,7 +52,7 @@
           <hr />
 
           <form action="/categories/edit" method="post">
-            <input type="hidden" name="id" id="{{ .category.Id }}">
+            <input type="hidden" name="id" value="{{ .category.Id }}">
             <div class="mb-3">
               <label class="form-label">Name</label>
               <input

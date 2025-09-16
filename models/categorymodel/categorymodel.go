@@ -32,7 +32,7 @@ func GetAll() []entities.Category {
 func Create(category entities.Category) bool {
 	result, err := config.DB.Exec(`
 	INSERT INTO categories (name, created_at, updated_at)
-	VALUE (?, ?, ?)`,
+	VALUES (?, ?, ?)`,
 	category.Name, category.CreatedAt, category.UpdatedAt,
 	)
 
