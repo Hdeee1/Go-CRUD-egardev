@@ -5,6 +5,7 @@ import "database/sql"
 type Product struct {
 	Id				uint
 	Name			string
+	CategoryId 		uint
 	Category		Category
 	Stock			int64
 	Descriptions	string

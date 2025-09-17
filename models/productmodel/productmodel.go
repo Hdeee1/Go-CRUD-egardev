@@ -15,7 +15,7 @@ func GetAll() []entities.Product{
 		products.created_at,
 		products.updated_at
 	FROM products
-	JOIN categories ON products.category_id = category.id
+	JOIN categories ON products.category_id = categories.id
     `)
 
 	if err != nil {
@@ -28,6 +28,8 @@ func GetAll() []entities.Product{
 
 	for rows.Next(){
 		var product entities.Product
+		var categoryName string
+		
 		err := rows.Scan(
 			&product.Id,
 			&product.Name,
@@ -42,6 +44,7 @@ func GetAll() []entities.Product{
 			panic(err)
 		}
 
+		product.Category.Name = categoryName
 		products = append(products, product)
 	}
 
